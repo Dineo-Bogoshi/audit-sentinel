@@ -19,7 +19,7 @@ inject_custom_styles()
 
 # 2. Hero Banner
 try:
-    st.image("assets/hero-banner.svg", use_container_width=True)
+    st.image("assets/hero-banner.svg", width="stretch")
 except Exception:
     st.warning("Hero banner image (`assets/hero-banner.svg`) not found — continuing without it.")
 
