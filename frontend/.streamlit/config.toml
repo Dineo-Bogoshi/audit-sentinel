@@ -1,0 +1,13 @@
+[theme]
+backgroundColor = "#cff1fa"
+secondaryBackgroundColor = "#fbec8c"
+textColor = "#000000"
+primaryColor = "#000000"
+font = "sans serif"
+
+[server]
+maxUploadSize = 200
+enableWebsocketCompression = false
+
+[client]
+showErrorDetails = true
