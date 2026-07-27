@@ -31,21 +31,23 @@ fin-sentinel/
 │
 ├── sample_data/              # Generated mock ledgers
 └── README.md
+```
 
 ## Features
 
-**Automated PII Masking:** Sanitizes sensitive inputs (emails, account numbers, personal identifiers) prior to analytical processing.
-
-**Machine Learning Auditing:** Employs an IsolationForest engine to flag statistical outliers, duplicate entries, and governance rule violations in financial ledgers.
-
-**Cached API Integration:** MD5 checksum verification prevents redundant server requests and optimizes Streamlit reruns.
-
-**Exportable Exception Reports:** Interactive visualization grids with quick-download options for compliance logging.
+* **Automated PII Masking:** Sanitizes sensitive inputs (emails, account numbers, personal identifiers) prior to analytical processing.
+* **Machine Learning Auditing:** Employs an IsolationForest engine to flag statistical outliers, duplicate entries, and governance rule violations in financial ledgers.
+* **Cached API Integration:** MD5 checksum verification prevents redundant server requests and optimizes Streamlit reruns.
+* **Exportable Exception Reports:** Interactive visualization grids with quick-download options for compliance logging.
 
 ## Quick Start Guide
 
-**1. Prerequisites & Environment Setup**
+<details>
+<summary><b>Click to expand Installation & Setup Instructions</b></summary>
 
+### 1. Prerequisites & Environment Setup
+
+```bash
 # Clone repository
 git clone https://github.com/Dineo-Bogoshi/audit-sentinel.git
 cd audit-sentinel
@@ -61,33 +63,39 @@ venv\Scripts\activate
 
 # Install all dependencies
 pip install -r backend/requirements.txt -r frontend/requirements.txt
+```
 
-**2. Generate Sample Ledger Data**
+### 2. Generate Sample Ledger Data
 
-Populate the sample_data/ folder with mock financial CSV records
+Populate the `sample_data/` folder with mock financial CSV records:
 
+```bash
 python scripts/generate_data.py
+```
 
-**3. Run the Application**
+### 3. Run the Application
 
 Launch both services in split terminal windows (with your virtual environment activated in both):
 
-**Terminal 1: Backend (FastAPI)
+**Terminal 1: Backend (FastAPI)**
+```bash
 cd backend
 python run.py
-
-Server runs on http://127.0.0.1:8000
-Interactive OpenAPI documentation available at http://127.0.0.1:8000/docs
+```
+* Server runs on http://127.0.0.1:8000
+* Interactive OpenAPI documentation available at http://127.0.0.1:8000/docs
 
 **Terminal 2: Frontend (Streamlit)**
+```bash
 cd frontend
 streamlit run streamlit_app.py
+```
+* Dashboard automatically launches at http://localhost:8501
 
-Dashboard automatically launches at http://localhost:8501
+</details>
 
 ## Tech Stack
 
-**Backend:** Python, FastAPI, Uvicorn, Pydantic, Scikit-Learn, Pandas
-**Frontend:** Streamlit, Plotly, Requests
-**Data & Testing:** Synthetic ledger generators, Isolation Forest, Regex PII redact pipelines
- 
+* **Backend:** Python, FastAPI, Uvicorn, Pydantic, Scikit-Learn, Pandas
+* **Frontend:** Streamlit, Plotly, Requests
+* **Data & Testing:** Synthetic ledger generators, Isolation Forest, Regex PII redact pipelines
